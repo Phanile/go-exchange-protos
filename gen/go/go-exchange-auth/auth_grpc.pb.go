@@ -4,7 +4,7 @@
 // - protoc             v5.29.3
 // source: go-exchange-auth/auth.proto
 
-package go_exchange_protos
+package authv1
 
 import (
 	context "context"
