@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package auth;
 
-option go_package = "github.com/Phanile/go-exchange-protos";
+option go_package = "github.com/Phanile/go-exchange-protos;authv1";
 
 service Auth {
   rpc Register (RegisterRequest) returns (RegisterResponse);
