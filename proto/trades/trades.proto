@@ -1,0 +1,49 @@
+syntax = "proto3";
+
+package trade;
+
+option go_package = "trade.v1;tradev1";
+
+service Trade {
+   rpc CreateOrder(CreateOrderRequest) returns (CreateOrderResponse);
+   rpc GetOrderBook(GetOrderBookRequest) returns (GetOrderBookResponse);
+}
+
+enum OrderType {
+    MARKET = 0;
+    LIMIT = 1;
+}
+
+enum OrderSide {
+    BUY = 0;
+    SELL = 1;
+}
+
+message CreateOrderRequest {
+    int64 user_id = 1;
+    int64 first_coin_id = 2;
+    int64 second_coin_id = 3;
+    OrderType type = 4;
+    OrderSide side = 5;
+    string amount = 6; //Decimal
+    optional string price = 7; //Decimal
+}
+
+message CreateOrderResponse {
+    int64 order_id = 1;
+}
+
+message GetOrderBookRequest {
+    int64 first_coin_id = 1;
+    int64 second_coin_id = 2;
+}
+
+message GetOrderBookResponse {
+    repeated OrderBookEntry bids = 1;
+    repeated OrderBookEntry asks = 2;
+}
+
+message OrderBookEntry {
+    string price = 1; //Decimal
+    string amount = 2; //Decimal
+}
