@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package listing;
+
+option go_package = "listing.v1;listingv1";
+
+service Listing {
+    rpc CreateListingRequest(ListingRequest) returns (ListingResponse);
+}
+
+message ListingRequest {
+    int64 chain_id = 1;
+    string full_name = 2;
+    string short_name = 3;
+    string currency = 4;
+    repeated string rpc_server_addresses = 5;
+    string white_paper_link = 6;
+}
+
+message ListingResponse {
+    string response = 1;
+}
