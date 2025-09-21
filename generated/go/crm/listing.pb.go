@@ -149,6 +149,358 @@ func (x *ListingResponse) GetResponse() string {
 	return ""
 }
 
+type ValidateRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ValidateRequest) Reset() {
+	*x = ValidateRequest{}
+	mi := &file_crm_listing_proto_msgTypes[2]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ValidateRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ValidateRequest) ProtoMessage() {}
+
+func (x *ValidateRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_crm_listing_proto_msgTypes[2]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ValidateRequest.ProtoReflect.Descriptor instead.
+func (*ValidateRequest) Descriptor() ([]byte, []int) {
+	return file_crm_listing_proto_rawDescGZIP(), []int{2}
+}
+
+func (x *ValidateRequest) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ValidateResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Response      string                 `protobuf:"bytes,1,opt,name=response,proto3" json:"response,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ValidateResponse) Reset() {
+	*x = ValidateResponse{}
+	mi := &file_crm_listing_proto_msgTypes[3]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ValidateResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ValidateResponse) ProtoMessage() {}
+
+func (x *ValidateResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_crm_listing_proto_msgTypes[3]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ValidateResponse.ProtoReflect.Descriptor instead.
+func (*ValidateResponse) Descriptor() ([]byte, []int) {
+	return file_crm_listing_proto_rawDescGZIP(), []int{3}
+}
+
+func (x *ValidateResponse) GetResponse() string {
+	if x != nil {
+		return x.Response
+	}
+	return ""
+}
+
+type ApproveRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApproveRequest) Reset() {
+	*x = ApproveRequest{}
+	mi := &file_crm_listing_proto_msgTypes[4]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveRequest) ProtoMessage() {}
+
+func (x *ApproveRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_crm_listing_proto_msgTypes[4]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveRequest.ProtoReflect.Descriptor instead.
+func (*ApproveRequest) Descriptor() ([]byte, []int) {
+	return file_crm_listing_proto_rawDescGZIP(), []int{4}
+}
+
+func (x *ApproveRequest) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type ApproveResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Response      string                 `protobuf:"bytes,1,opt,name=response,proto3" json:"response,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *ApproveResponse) Reset() {
+	*x = ApproveResponse{}
+	mi := &file_crm_listing_proto_msgTypes[5]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *ApproveResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*ApproveResponse) ProtoMessage() {}
+
+func (x *ApproveResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_crm_listing_proto_msgTypes[5]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use ApproveResponse.ProtoReflect.Descriptor instead.
+func (*ApproveResponse) Descriptor() ([]byte, []int) {
+	return file_crm_listing_proto_rawDescGZIP(), []int{5}
+}
+
+func (x *ApproveResponse) GetResponse() string {
+	if x != nil {
+		return x.Response
+	}
+	return ""
+}
+
+type RejectRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RejectRequest) Reset() {
+	*x = RejectRequest{}
+	mi := &file_crm_listing_proto_msgTypes[6]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RejectRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RejectRequest) ProtoMessage() {}
+
+func (x *RejectRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_crm_listing_proto_msgTypes[6]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RejectRequest.ProtoReflect.Descriptor instead.
+func (*RejectRequest) Descriptor() ([]byte, []int) {
+	return file_crm_listing_proto_rawDescGZIP(), []int{6}
+}
+
+func (x *RejectRequest) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type RejectResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Response      string                 `protobuf:"bytes,1,opt,name=response,proto3" json:"response,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *RejectResponse) Reset() {
+	*x = RejectResponse{}
+	mi := &file_crm_listing_proto_msgTypes[7]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *RejectResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*RejectResponse) ProtoMessage() {}
+
+func (x *RejectResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_crm_listing_proto_msgTypes[7]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use RejectResponse.ProtoReflect.Descriptor instead.
+func (*RejectResponse) Descriptor() ([]byte, []int) {
+	return file_crm_listing_proto_rawDescGZIP(), []int{7}
+}
+
+func (x *RejectResponse) GetResponse() string {
+	if x != nil {
+		return x.Response
+	}
+	return ""
+}
+
+type DelistRequest struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Id            int64                  `protobuf:"varint,1,opt,name=id,proto3" json:"id,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DelistRequest) Reset() {
+	*x = DelistRequest{}
+	mi := &file_crm_listing_proto_msgTypes[8]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DelistRequest) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DelistRequest) ProtoMessage() {}
+
+func (x *DelistRequest) ProtoReflect() protoreflect.Message {
+	mi := &file_crm_listing_proto_msgTypes[8]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DelistRequest.ProtoReflect.Descriptor instead.
+func (*DelistRequest) Descriptor() ([]byte, []int) {
+	return file_crm_listing_proto_rawDescGZIP(), []int{8}
+}
+
+func (x *DelistRequest) GetId() int64 {
+	if x != nil {
+		return x.Id
+	}
+	return 0
+}
+
+type DelistResponse struct {
+	state         protoimpl.MessageState `protogen:"open.v1"`
+	Response      string                 `protobuf:"bytes,1,opt,name=response,proto3" json:"response,omitempty"`
+	unknownFields protoimpl.UnknownFields
+	sizeCache     protoimpl.SizeCache
+}
+
+func (x *DelistResponse) Reset() {
+	*x = DelistResponse{}
+	mi := &file_crm_listing_proto_msgTypes[9]
+	ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+	ms.StoreMessageInfo(mi)
+}
+
+func (x *DelistResponse) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*DelistResponse) ProtoMessage() {}
+
+func (x *DelistResponse) ProtoReflect() protoreflect.Message {
+	mi := &file_crm_listing_proto_msgTypes[9]
+	if x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use DelistResponse.ProtoReflect.Descriptor instead.
+func (*DelistResponse) Descriptor() ([]byte, []int) {
+	return file_crm_listing_proto_rawDescGZIP(), []int{9}
+}
+
+func (x *DelistResponse) GetResponse() string {
+	if x != nil {
+		return x.Response
+	}
+	return ""
+}
+
 var File_crm_listing_proto protoreflect.FileDescriptor
 
 const file_crm_listing_proto_rawDesc = "" +
@@ -163,9 +515,30 @@ const file_crm_listing_proto_rawDesc = "" +
 	"\x14rpc_server_addresses\x18\x05 \x03(\tR\x12rpcServerAddresses\x12(\n" +
 	"\x10white_paper_link\x18\x06 \x01(\tR\x0ewhitePaperLink\"-\n" +
 	"\x0fListingResponse\x12\x1a\n" +
-	"\bresponse\x18\x01 \x01(\tR\bresponse2T\n" +
+	"\bresponse\x18\x01 \x01(\tR\bresponse\"!\n" +
+	"\x0fValidateRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\".\n" +
+	"\x10ValidateResponse\x12\x1a\n" +
+	"\bresponse\x18\x01 \x01(\tR\bresponse\" \n" +
+	"\x0eApproveRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\"-\n" +
+	"\x0fApproveResponse\x12\x1a\n" +
+	"\bresponse\x18\x01 \x01(\tR\bresponse\"\x1f\n" +
+	"\rRejectRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\",\n" +
+	"\x0eRejectResponse\x12\x1a\n" +
+	"\bresponse\x18\x01 \x01(\tR\bresponse\"\x1f\n" +
+	"\rDelistRequest\x12\x0e\n" +
+	"\x02id\x18\x01 \x01(\x03R\x02id\",\n" +
+	"\x0eDelistResponse\x12\x1a\n" +
+	"\bresponse\x18\x01 \x01(\tR\bresponse2\xf7\x02\n" +
 	"\aListing\x12I\n" +
-	"\x14CreateListingRequest\x12\x17.listing.ListingRequest\x1a\x18.listing.ListingResponseB\x16Z\x14listing.v1;listingv1b\x06proto3"
+	"\x14CreateListingRequest\x12\x17.listing.ListingRequest\x1a\x18.listing.ListingResponse\x12M\n" +
+	"\x16ValidateListingRequest\x12\x18.listing.ValidateRequest\x1a\x19.listing.ValidateResponse\x12J\n" +
+	"\x15ApproveListingRequest\x12\x17.listing.ApproveRequest\x1a\x18.listing.ApproveResponse\x12G\n" +
+	"\x14RejectListingRequest\x12\x16.listing.RejectRequest\x1a\x17.listing.RejectResponse\x12=\n" +
+	"\n" +
+	"DelistCoin\x12\x16.listing.DelistRequest\x1a\x17.listing.DelistResponseB\x16Z\x14listing.v1;listingv1b\x06proto3"
 
 var (
 	file_crm_listing_proto_rawDescOnce sync.Once
@@ -179,16 +552,32 @@ func file_crm_listing_proto_rawDescGZIP() []byte {
 	return file_crm_listing_proto_rawDescData
 }
 
-var file_crm_listing_proto_msgTypes = make([]protoimpl.MessageInfo, 2)
+var file_crm_listing_proto_msgTypes = make([]protoimpl.MessageInfo, 10)
 var file_crm_listing_proto_goTypes = []any{
-	(*ListingRequest)(nil),  // 0: listing.ListingRequest
-	(*ListingResponse)(nil), // 1: listing.ListingResponse
+	(*ListingRequest)(nil),   // 0: listing.ListingRequest
+	(*ListingResponse)(nil),  // 1: listing.ListingResponse
+	(*ValidateRequest)(nil),  // 2: listing.ValidateRequest
+	(*ValidateResponse)(nil), // 3: listing.ValidateResponse
+	(*ApproveRequest)(nil),   // 4: listing.ApproveRequest
+	(*ApproveResponse)(nil),  // 5: listing.ApproveResponse
+	(*RejectRequest)(nil),    // 6: listing.RejectRequest
+	(*RejectResponse)(nil),   // 7: listing.RejectResponse
+	(*DelistRequest)(nil),    // 8: listing.DelistRequest
+	(*DelistResponse)(nil),   // 9: listing.DelistResponse
 }
 var file_crm_listing_proto_depIdxs = []int32{
 	0, // 0: listing.Listing.CreateListingRequest:input_type -> listing.ListingRequest
-	1, // 1: listing.Listing.CreateListingRequest:output_type -> listing.ListingResponse
-	1, // [1:2] is the sub-list for method output_type
-	0, // [0:1] is the sub-list for method input_type
+	2, // 1: listing.Listing.ValidateListingRequest:input_type -> listing.ValidateRequest
+	4, // 2: listing.Listing.ApproveListingRequest:input_type -> listing.ApproveRequest
+	6, // 3: listing.Listing.RejectListingRequest:input_type -> listing.RejectRequest
+	8, // 4: listing.Listing.DelistCoin:input_type -> listing.DelistRequest
+	1, // 5: listing.Listing.CreateListingRequest:output_type -> listing.ListingResponse
+	3, // 6: listing.Listing.ValidateListingRequest:output_type -> listing.ValidateResponse
+	5, // 7: listing.Listing.ApproveListingRequest:output_type -> listing.ApproveResponse
+	7, // 8: listing.Listing.RejectListingRequest:output_type -> listing.RejectResponse
+	9, // 9: listing.Listing.DelistCoin:output_type -> listing.DelistResponse
+	5, // [5:10] is the sub-list for method output_type
+	0, // [0:5] is the sub-list for method input_type
 	0, // [0:0] is the sub-list for extension type_name
 	0, // [0:0] is the sub-list for extension extendee
 	0, // [0:0] is the sub-list for field type_name
@@ -205,7 +594,7 @@ func file_crm_listing_proto_init() {
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: unsafe.Slice(unsafe.StringData(file_crm_listing_proto_rawDesc), len(file_crm_listing_proto_rawDesc)),
 			NumEnums:      0,
-			NumMessages:   2,
+			NumMessages:   10,
 			NumExtensions: 0,
 			NumServices:   1,
 		},

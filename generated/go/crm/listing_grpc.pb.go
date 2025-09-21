@@ -19,7 +19,11 @@ import (
 const _ = grpc.SupportPackageIsVersion9
 
 const (
-	Listing_CreateListingRequest_FullMethodName = "/listing.Listing/CreateListingRequest"
+	Listing_CreateListingRequest_FullMethodName   = "/listing.Listing/CreateListingRequest"
+	Listing_ValidateListingRequest_FullMethodName = "/listing.Listing/ValidateListingRequest"
+	Listing_ApproveListingRequest_FullMethodName  = "/listing.Listing/ApproveListingRequest"
+	Listing_RejectListingRequest_FullMethodName   = "/listing.Listing/RejectListingRequest"
+	Listing_DelistCoin_FullMethodName             = "/listing.Listing/DelistCoin"
 )
 
 // ListingClient is the client API for Listing service.
@@ -27,6 +31,10 @@ const (
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ListingClient interface {
 	CreateListingRequest(ctx context.Context, in *ListingRequest, opts ...grpc.CallOption) (*ListingResponse, error)
+	ValidateListingRequest(ctx context.Context, in *ValidateRequest, opts ...grpc.CallOption) (*ValidateResponse, error)
+	ApproveListingRequest(ctx context.Context, in *ApproveRequest, opts ...grpc.CallOption) (*ApproveResponse, error)
+	RejectListingRequest(ctx context.Context, in *RejectRequest, opts ...grpc.CallOption) (*RejectResponse, error)
+	DelistCoin(ctx context.Context, in *DelistRequest, opts ...grpc.CallOption) (*DelistResponse, error)
 }
 
 type listingClient struct {
@@ -47,11 +55,55 @@ func (c *listingClient) CreateListingRequest(ctx context.Context, in *ListingReq
 	return out, nil
 }
 
+func (c *listingClient) ValidateListingRequest(ctx context.Context, in *ValidateRequest, opts ...grpc.CallOption) (*ValidateResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ValidateResponse)
+	err := c.cc.Invoke(ctx, Listing_ValidateListingRequest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *listingClient) ApproveListingRequest(ctx context.Context, in *ApproveRequest, opts ...grpc.CallOption) (*ApproveResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(ApproveResponse)
+	err := c.cc.Invoke(ctx, Listing_ApproveListingRequest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *listingClient) RejectListingRequest(ctx context.Context, in *RejectRequest, opts ...grpc.CallOption) (*RejectResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(RejectResponse)
+	err := c.cc.Invoke(ctx, Listing_RejectListingRequest_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
+func (c *listingClient) DelistCoin(ctx context.Context, in *DelistRequest, opts ...grpc.CallOption) (*DelistResponse, error) {
+	cOpts := append([]grpc.CallOption{grpc.StaticMethod()}, opts...)
+	out := new(DelistResponse)
+	err := c.cc.Invoke(ctx, Listing_DelistCoin_FullMethodName, in, out, cOpts...)
+	if err != nil {
+		return nil, err
+	}
+	return out, nil
+}
+
 // ListingServer is the server API for Listing service.
 // All implementations must embed UnimplementedListingServer
 // for forward compatibility.
 type ListingServer interface {
 	CreateListingRequest(context.Context, *ListingRequest) (*ListingResponse, error)
+	ValidateListingRequest(context.Context, *ValidateRequest) (*ValidateResponse, error)
+	ApproveListingRequest(context.Context, *ApproveRequest) (*ApproveResponse, error)
+	RejectListingRequest(context.Context, *RejectRequest) (*RejectResponse, error)
+	DelistCoin(context.Context, *DelistRequest) (*DelistResponse, error)
 	mustEmbedUnimplementedListingServer()
 }
 
@@ -64,6 +116,18 @@ type UnimplementedListingServer struct{}
 
 func (UnimplementedListingServer) CreateListingRequest(context.Context, *ListingRequest) (*ListingResponse, error) {
 	return nil, status.Errorf(codes.Unimplemented, "method CreateListingRequest not implemented")
+}
+func (UnimplementedListingServer) ValidateListingRequest(context.Context, *ValidateRequest) (*ValidateResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ValidateListingRequest not implemented")
+}
+func (UnimplementedListingServer) ApproveListingRequest(context.Context, *ApproveRequest) (*ApproveResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method ApproveListingRequest not implemented")
+}
+func (UnimplementedListingServer) RejectListingRequest(context.Context, *RejectRequest) (*RejectResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method RejectListingRequest not implemented")
+}
+func (UnimplementedListingServer) DelistCoin(context.Context, *DelistRequest) (*DelistResponse, error) {
+	return nil, status.Errorf(codes.Unimplemented, "method DelistCoin not implemented")
 }
 func (UnimplementedListingServer) mustEmbedUnimplementedListingServer() {}
 func (UnimplementedListingServer) testEmbeddedByValue()                 {}
@@ -104,6 +168,78 @@ func _Listing_CreateListingRequest_Handler(srv interface{}, ctx context.Context,
 	return interceptor(ctx, in, info, handler)
 }
 
+func _Listing_ValidateListingRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ValidateRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ListingServer).ValidateListingRequest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Listing_ValidateListingRequest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ListingServer).ValidateListingRequest(ctx, req.(*ValidateRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Listing_ApproveListingRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(ApproveRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ListingServer).ApproveListingRequest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Listing_ApproveListingRequest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ListingServer).ApproveListingRequest(ctx, req.(*ApproveRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Listing_RejectListingRequest_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(RejectRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ListingServer).RejectListingRequest(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Listing_RejectListingRequest_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ListingServer).RejectListingRequest(ctx, req.(*RejectRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
+func _Listing_DelistCoin_Handler(srv interface{}, ctx context.Context, dec func(interface{}) error, interceptor grpc.UnaryServerInterceptor) (interface{}, error) {
+	in := new(DelistRequest)
+	if err := dec(in); err != nil {
+		return nil, err
+	}
+	if interceptor == nil {
+		return srv.(ListingServer).DelistCoin(ctx, in)
+	}
+	info := &grpc.UnaryServerInfo{
+		Server:     srv,
+		FullMethod: Listing_DelistCoin_FullMethodName,
+	}
+	handler := func(ctx context.Context, req interface{}) (interface{}, error) {
+		return srv.(ListingServer).DelistCoin(ctx, req.(*DelistRequest))
+	}
+	return interceptor(ctx, in, info, handler)
+}
+
 // Listing_ServiceDesc is the grpc.ServiceDesc for Listing service.
 // It's only intended for direct use with grpc.RegisterService,
 // and not to be introspected or modified (even as a copy)
@@ -114,6 +250,22 @@ var Listing_ServiceDesc = grpc.ServiceDesc{
 		{
 			MethodName: "CreateListingRequest",
 			Handler:    _Listing_CreateListingRequest_Handler,
+		},
+		{
+			MethodName: "ValidateListingRequest",
+			Handler:    _Listing_ValidateListingRequest_Handler,
+		},
+		{
+			MethodName: "ApproveListingRequest",
+			Handler:    _Listing_ApproveListingRequest_Handler,
+		},
+		{
+			MethodName: "RejectListingRequest",
+			Handler:    _Listing_RejectListingRequest_Handler,
+		},
+		{
+			MethodName: "DelistCoin",
+			Handler:    _Listing_DelistCoin_Handler,
 		},
 	},
 	Streams:  []grpc.StreamDesc{},

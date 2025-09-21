@@ -6,6 +6,10 @@ option go_package = "listing.v1;listingv1";
 
 service Listing {
     rpc CreateListingRequest(ListingRequest) returns (ListingResponse);
+    rpc ValidateListingRequest(ValidateRequest) returns (ValidateResponse);
+    rpc ApproveListingRequest(ApproveRequest) returns (ApproveResponse);
+    rpc RejectListingRequest(RejectRequest) returns (RejectResponse);
+    rpc DelistCoin(DelistRequest) returns (DelistResponse);
 }
 
 message ListingRequest {
@@ -18,5 +22,37 @@ message ListingRequest {
 }
 
 message ListingResponse {
+    string response = 1;
+}
+
+message ValidateRequest {
+    int64 id = 1;
+}
+
+message ValidateResponse {
+    string response = 1;
+}
+
+message ApproveRequest {
+    int64 id = 1;
+}
+
+message ApproveResponse {
+    string response = 1;
+}
+
+message RejectRequest {
+    int64 id = 1;
+}
+
+message RejectResponse {
+    string response = 1;
+}
+
+message DelistRequest {
+    int64 id = 1;
+}
+
+message DelistResponse {
     string response = 1;
 }
